@@ -1,0 +1,175 @@
+/*Author: Jad Mohi-El-Din, Carleton University*/
+/*Team members: Jad Mohi-El-Din, Chirs Ahouzi (University of Toronto)*/
+/*NASA INTERNATIONAL SPACE APPS HACKATON October 5th 2025*/
+/*This code takes part of the website through which users receive weather characteristics with respect to the date and city they inputed*/
+/*The use of Chat GPT is acknowledged in the preparation of this code; Fixing errors, discovering new libraries/API's, generating fake data to demonstrate functionality of information display*/
+
+#globe{
+    position: relative;
+    z-index: 0;
+}
+
+#SearchButton {
+    z-index: 9999; /*This is to ensure the button is on top of the globe layer*/
+    top: 35px; 
+    left: 35px;
+    position: absolute;
+    padding: 12px 28px; /*spacing around the "search" inside the button*/
+    border: none; /*removes all default designs made at the borders of the button*/
+    border-radius: 50px; /*corners are smoothed out*/
+    cursor: pointer;
+    /* background gradient */
+    /*According to design on canva, we wanted the color to change as we go from left to right*/
+    background: linear-gradient(to right, #000000, #1e1ebd);
+    /*All of the following are strictly related to text design*/
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.InformationDisplay{
+    visibility: visible;
+    z-index: 9999;
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 55px;
+    width: 400px;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(to right, #000000, #1e1ebd);
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+}
+
+.InformationDisplay #results{
+    visibility: hidden;
+    right: 10px;
+    background: linear-gradient(to top, #e52b2b, #731919);
+     border-radius: 50px;
+     border: none;
+     color: white;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.InformationDisplay #results2{
+    visibility: hidden;
+    cursor: pointer;
+    right: 10px;
+    background: linear-gradient(to top, #43cc25, #226214);
+     border-radius: 50px;
+     border: none;
+     color: white;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.InformationDisplay2 #results3{
+    visibility: hidden;
+    cursor: pointer;
+    right: 10px;
+    background: linear-gradient(to top, #997300, #ffc000);
+     border-radius: 50px;
+     border: none;
+     color: white;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.InformationDisplay #send{
+    visibility: visible;
+    cursor: pointer;
+    right: 10px;
+    background: linear-gradient(to top, #f4773e, #963e15);
+     border-radius: 50px;
+     border: none;
+     color: white;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+.InformationDisplay #TimePeriods{
+    cursor: pointer;
+    border-radius: 50px;
+    width: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+}
+
+.InformationDisplay #location{
+    cursor: text;
+    border-radius: 50px;
+    width: 220px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+}
+
+.InformationDisplay #timeline{
+    cursor: pointer;
+    border-radius: 50px;
+    width: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+}
+
+.InformationDisplay #hours{
+    cursor: pointer;
+    border-radius: 50px;
+    width: 45px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+}
+
+.InformationDisplay2{
+    visibility: hidden;
+    z-index: 9999;
+    position: absolute;
+    top: 500px;
+    left: 55px;
+    width: 500px;
+    padding: 30px 15px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(to right, #000000, #1e1ebd);
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.InformationDisplay2 #image{
+    width: 200px;
+    padding: 5px 50px ;
+}
+
+
